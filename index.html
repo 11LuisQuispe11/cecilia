@@ -388,37 +388,31 @@
       gap: 14px;
     }
 
-    .gallery-card {
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      min-height: 220px;
-    }
-
     .gallery-card.large {
       grid-column: span 7;
-      min-height: 360px;
+      height: 360px;
     }
 
     .gallery-card.medium {
       grid-column: span 5;
-      min-height: 360px;
+      height: 360px;
     }
 
     .gallery-card.small {
       grid-column: span 4;
-      min-height: 240px;
+      height: 240px;
     }
 
     .gallery-card img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      object-position: center;
       display: block;
+      object-fit: cover;
+      object-position: center center;
       transition: transform 0.5s ease, filter 0.5s ease;
       filter: brightness(0.86);
     }
+
 
     .gallery-card:hover img {
       transform: scale(1.06);
@@ -652,6 +646,15 @@
     .countdown-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+    }
+
+    @media (max-width: 900px) {
+      .gallery-card.large,
+      .gallery-card.medium,
+      .gallery-card.small {
+        grid-column: span 12;
+        height: 260px;
+      }
     }
   </style>
 </head>
